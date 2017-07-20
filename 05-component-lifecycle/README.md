@@ -15,3 +15,7 @@ Each component has several “lifecycle methods” that you can use to run code 
 - componentDidUpdate()
 3. Unmounting
 - componentWillUnmount()
+
+### Reference:
+
+https://medium.com/@aghh1504/5-the-react-component-lifecycle-8328bd5f1b3c
