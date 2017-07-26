@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Function Component
 const List = props => (
   <ul>
     {

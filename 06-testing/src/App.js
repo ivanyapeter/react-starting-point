@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import List from './List';
 
-// Class Component
 export default class App extends Component {
 
   // term is the input text value
