@@ -37,8 +37,9 @@ class Form extends React.Component {
     const url = `http://api.github.com/users/${this.state.userName}`;
     fetch(url)
       .then(response => response.json())
-      .then(data =>  console.log(data)
-    )
+      .then(data =>
+        console.log(data)
+      )
       .catch(e => console.log('error', e));
   }
 
