@@ -50,6 +50,6 @@ All the example bootstrap with create-react-app
 - Incomplete
 
 To Do:
-- Organise examples in smaller chucks
+- Organise examples in smaller chunks
 - Show example at the very core before showing best practices if best practices are not the most bare way to achieve the desired goal
 - Show best practices
