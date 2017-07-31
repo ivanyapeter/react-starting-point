@@ -6,6 +6,10 @@ The example will examine one aspect of react at a time.
 
 Slowly build up bit by bit to more complex features of react.
 
+Function component: Stateless Component. Presentation only component, does not have any state/logic.
+
+Class component: Component that has state. Could have logic and manage the data flow, presentational logic (show/hide)
+
 
 All the example bootstrap with create-react-app
 
@@ -53,6 +57,7 @@ All the example bootstrap with create-react-app
 - Use GitHub API to populate UI
 - Take user input
 - Style
+- One way data binding. Do not get cought up.
 
 To Do:
 - Organise examples in smaller chunks

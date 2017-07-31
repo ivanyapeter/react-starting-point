@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// Function Component
+// Inline styling
+// Card props value is coming from CardList
 const Card = (props) => {
+  console.log('card created');
   return (
-    <div>
-      <img width="75" src="{props.avatar_url}" alt=""/>
+    <div style={{margin: '1em'}}>
+      <img width="75" src={props.avatar_url} alt=""/>
       <div style={{display: 'inline-block', marginLeft: 10}} >
         <div style={{fontSize: '1.25em', fontWeight: 'bold'}} >
           {props.name}
@@ -16,7 +20,11 @@ const Card = (props) => {
   );
 };
 
+// Function Component
+// Run map function on props.cards
+// Returned card details
 const CardList = (props) => {
+  console.log('receive cards state from App component, iterate');
   return (
     <div>
       {props.cards.map(card => <Card {...card} />)}
@@ -24,6 +32,7 @@ const CardList = (props) => {
   );
 };
 
+// Class component
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -32,17 +41,25 @@ class Form extends React.Component {
     }
   }
 
+  // handleSubmit function to call api (github)
+  // receive response, turn into JSON
+  // call onSubmit function
+  // empty input text value
   handleSubmit = (event) => {
     event.preventDefault();
     const url = `http://api.github.com/users/${this.state.userName}`;
+    console.log('submit username')
     fetch(url)
       .then(response => response.json())
-      .then(data =>
-        console.log(data)
-      )
+      .then(data => {
+        console.log('receive username data');
+        this.props.onSubmit(data);
+        this.setState({ userName: '' });
+      })
       .catch(e => console.log('error', e));
   }
 
+  // set userName on every change in input text
   onChange = (event) => {
     this.setState({userName: event.target.value});
   }
@@ -54,7 +71,7 @@ class Form extends React.Component {
           value={this.state.userName}
           onChange={this.onChange}
           placeholder="Github username" required/>
-
+        <button>Add Card</button>
       </form>
     );
   }
@@ -64,27 +81,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [
-        {
-          name: "Paul O'Shannessy",
-          avatar_url: "https://avatars.githubusercontent.com/u/8445?v=3",
-          company: "Facebook" },
-        {
-          name: "Paul O'Shannessy",
-          avatar_url: "https://avatars.githubusercontent.com/u/8445?v=3",
-          company: "Facebook" },
-      ]
+      cards: []
     }
-  }
+  };
+
+  // Adding new card details to cards array
+  addNewCard = (cardInfo) => {
+    console.log('add new card to array cards');
+    this.setState(prevState => ({
+      cards: prevState.cards.concat(cardInfo)
+    }));
+  };
 
   render() {
     return (
       <div className="App">
-        <Form />
+        <Form onSubmit={this.addNewCard} />
         <CardList cards={this.state.cards} />
       </div>
     );
-  }
+  };
 }
 
 export default App;
