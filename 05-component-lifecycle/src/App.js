@@ -13,12 +13,16 @@ class App extends Component {
     };
   }
 
+  // Create incrementCounter function
+  // added one counter
   incrementCounter = () => {
     this.setState({
       counter: ++this.state.counter
     });
   };
 
+  // Display Counter component
+  // Attach button with onClick event listener that calls incrementCounter()
   render() {
     return (
       <div className="App">
