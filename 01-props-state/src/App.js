@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import MyComponent from './MyComponent';
 import logo from './logo.svg';
 import './App.css';
 
+// Function Component
+const MyComponent = (props) => {
+  return (
+    <div>Hello World! My name is {props.name}</div>
+  )
+}
+
+// Class Component
 class App extends Component {
 
   // Initial setup, set state of isOn to true
