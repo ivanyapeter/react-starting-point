@@ -4,12 +4,13 @@ I created this list of simple React example compiled from many resources I can f
 
 The example will examine one aspect of react at a time.
 
-Slowly build up bit by bit to more complex features of react.
+Slowly build up bit by bit to more complex concept of react.
 
 Function component: Stateless Component. Presentation only component, does not have any state/logic.
 
 Class component: Component that has state. Could have logic and manage the data flow, presentational logic (show/hide)
 
+onClick handler need function reference not function call
 
 All the example bootstrap with create-react-app
 
@@ -58,6 +59,12 @@ All the example bootstrap with create-react-app
 - Take user input
 - Style
 - One way data binding. Do not get cought up.
+
+### 08-play-nine
+- Class Component
+- Initialise State
+- Function calls
+- Initialise State and Reset function using initialise state
 
 To Do:
 - Organise examples in smaller chunks
