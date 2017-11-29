@@ -6,6 +6,9 @@ The example will examine one aspect of react at a time.
 
 Slowly build up bit by bit to more complex concept of react.
 
+The examples development environment are based on create-react-app to jump into React right away.
+
+### TOC
 Function component: Stateless Component. Presentation only component, does not have any state/logic.
 
 Class component: Component that has state. Could have logic and manage the data flow, presentational logic (show/hide)
